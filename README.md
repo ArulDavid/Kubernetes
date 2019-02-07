@@ -93,7 +93,7 @@
 
              root@ip-172-31-44-209:~#
              
-   **Step 7: Deploy Sample application and expose it to public**
+   **Step 7: Deploy Sample application and expose it**
    
     root@ip-172-31-44-209:~# kubectl run hello-minikube --image=gcr.io/google_containers/echoserver:1.4 --port=8080
     kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-    pod/v1 or kubectl create instead.
@@ -116,6 +116,13 @@
     service/hello-minikube exposed
     root@ip-172-31-44-209:~#
 
+    root@ip-172-31-44-209:~# kubectl get services --output=wide
+    NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE     SELECTOR
+    hello-minikube   NodePort    10.105.60.116   <none>        8080:30380/TCP   4m50s   run=hello-minikube
+    kubernetes       ClusterIP   10.96.0.1       <none>        443/TCP          22h     <none>
+    root@ip-172-31-44-209:~#
+    
+    
     
     
 
