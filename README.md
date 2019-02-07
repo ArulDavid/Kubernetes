@@ -122,10 +122,38 @@
     kubernetes       ClusterIP   10.96.0.1       <none>        443/TCP          22h     <none>
     root@ip-172-31-44-209:~#
     
-    
-    
-    
+    root@ip-172-31-44-209:~# curl $(minikube service hello-minikube --url)
+    Hostname: hello-minikube-6fd785d459-fnpnh
 
+        Pod Information:
+        -no pod information available-
+
+        Server values:
+        server_version=nginx: 1.13.3 - lua: 10008
+
+        Request Information:
+             client_address=172.17.0.1
+             method=GET
+             real path=/
+             query=
+             request_version=1.1
+             request_scheme=http
+             request_uri=http://172.31.44.209:8080/
+
+        Request Headers:
+            accept=*/*
+            host=172.31.44.209:30166
+            user-agent=curl/7.58.0
+
+        Request Body:
+            -no body in request-
+
+  **Step 8: Stop the kubernetes clusters**
+  
+            root@ip-172-31-44-209:~# minikube stop
+            Stopping local Kubernetes cluster...
+            Machine stopped.
+            root@ip-172-31-44-209:~#
 
 
     
